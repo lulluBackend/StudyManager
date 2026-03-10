@@ -68,20 +68,20 @@ Existe também um arquivo **`.env.example`** que mostra como deve ser a estrutur
 
 ```
 DATABASE_URL="mysql://username:suasenha@localhost:3306/sm_api"
-DATABASE_USER="username"
-DATABASE_PASSWORD="suasenha"
-DATABASE_NAME="sm_api"
-DATABASE_HOST="localhost"
-DATABASE_PORT=3306
+DATABASE_USER="username"                                      
+DATABASE_PASSWORD="suasenha"                                  
+DATABASE_NAME="sm_api"                                        
+DATABASE_HOST="localhost"                                      
+DATABASE_PORT=3306                                            
 ```
 
 ### Configurar o Banco de Dados (Prisma)
 
 Execute as migrações para **criar as tabelas no banco de dados** e **gerar o Prisma Client**:
 
-```
-npx prisma migrate dev
-```
+``
+npx prisma migrate dev                                      
+``
 
 ---
 
@@ -91,15 +91,15 @@ npx prisma migrate dev
 
 Para iniciar o servidor em modo de desenvolvimento utilize um dos comandos abaixo:
 
-```
-npx tsx server.js
-```
+``
+npx tsx server.js                                        
+``
 
 ou
 
-```
-npm run dev
-```
+``
+npm run dev                            
+``
 
 O servidor está configurado para estar disponível em **http://localhost:3000**
 
