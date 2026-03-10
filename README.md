@@ -60,36 +60,46 @@ Instalar as dependências
 npm install
 ``
 
-Configurar as variáveis de ambiente
-Crie um arquivo .env na raiz do projeto e adicione a URL de conexão com o seu banco de dados (MariaDB/MySQL):
-Tem um arquivo chamado .env.exemple que mostra como é a estrutura esperada:
-``
+### Configurar as Variáveis de Ambiente
+
+Crie um arquivo **`.env`** na raiz do projeto e adicione a URL de conexão com o seu banco de dados (MariaDB/MySQL).
+
+Existe também um arquivo **`.env.example`** que mostra como deve ser a estrutura esperada das variáveis de ambiente.
+
+```
 DATABASE_URL="mysql://username:suasenha@localhost:3306/sm_api"
 DATABASE_USER="username"
 DATABASE_PASSWORD="suasenha"
 DATABASE_NAME="sm_api"
 DATABASE_HOST="localhost"
 DATABASE_PORT=3306
-``
+```
 
-Configurar o Banco de Dados (Prisma)
-Execute as migrações para criar as tabelas no banco de dados e gerar o Prisma Client:
+### Configurar o Banco de Dados (Prisma)
 
-``
+Execute as migrações para **criar as tabelas no banco de dados** e **gerar o Prisma Client**:
+
+```
 npx prisma migrate dev
-``
+```
 
-**Como Usar**
-Executando a API
-Para iniciar o servidor em modo de desenvolvimento utilize o comando:
-``
+---
+
+## Como Usar
+
+### Executando a API
+
+Para iniciar o servidor em modo de desenvolvimento utilize um dos comandos abaixo:
+
+```
 npx tsx server.js
-``
+```
+
 ou
 
-``
+```
 npm run dev
-``
+```
 
 O servidor está configurado para estar disponível em **http://localhost:3000**
 
