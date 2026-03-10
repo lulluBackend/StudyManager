@@ -139,3 +139,36 @@ O projeto utiliza uma **estrutura de roteamento modular** para facilitar a manut
 - **`lib/prisma.js`**  
   Arquivo responsável por criar e exportar uma **instância única do Prisma Client**, utilizada para acessar o banco de dados em toda a aplicação.
 
+## Justificativa da Estrutura de Rotas
+
+Os modelos do banco de dados estão definidos no arquivo padrão do Prisma:
+```text
+prisma/schema.prisma
+```
+A organização das rotas foi feita por **entidade (tabela)**, e não por tipo de operação.
+Assim, cada pasta relacionada a uma tabela contém todas as rotas de **CRUD** referentes a ela.
+
+### Motivo da escolha
+
+Preferi essa abordagem porque torna a estrutura do projeto **mais intuitiva e fácil de entender**, já que toda a lógica relacionada a uma mesma entidade fica **centralizada no mesmo local**.
+
+### Outra possível abordagem
+
+Outra forma de organizar seria separar as rotas **por tipo de método HTTP**, por exemplo:
+
+```
+routes/
+ ├── gets/
+ │   ├── user.js
+ │   └── courses.js
+ ├── posts/
+ │   ├── user.js
+ │   └── courses.js
+ ├── puts/
+ └── deletes/
+```
+Nesse caso, cada pasta conteria os métodos **GET**, **POST**, **PUT** e **DELETE** de várias tabelas diferentes.
+
+### Conclusão
+
+Mas na minha opinião, **agrupar as rotas por tabela** torna a navegação no projeto **mais simples**, além de facilitar a **manutenção e organização do código**.
